@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <article>
+        {{ post }}
+    </article>
+    <nav>
+        {% if prev %}
+            <a href="{% url 'app:post_detail' prev.pk %}">前の記事</a>
+        {% endif %}
+
+        {% if next %}
+            <a href="{% url 'app:post_detail' next.pk %}">次の記事</a>
+        {% endif %}
+    </nav>
+{% endblock %}
